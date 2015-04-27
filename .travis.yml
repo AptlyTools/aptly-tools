@@ -1,0 +1,10 @@
+language: python
+python:
+  - "2.7"
+script: python setup.py test
+
+before_install:
+  - sudo apt-key adv --keyserver keys.gnupg.net --recv-keys E083A3782A194991
+  - echo "deb http://repo.aptly.info/ squeeze main" | sudo tee -a /etc/apt/sources.list
+  - sudo apt-get update -qq
+  - sudo apt-get install -y python-debian
